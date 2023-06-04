@@ -28,7 +28,36 @@ export const actorApi = createApi({
 
       providesTags: ['actors'],
     }),
+
+    createActor: builder.mutation({
+      query: (actor: Actor) => ({
+        url: '/actors',
+        method: 'post',
+        data: actor,
+      }),
+      invalidatesTags: ['actors'],
+    }),
+
+    // updateProject: builder.mutation({
+    //   query: ({ id, project }) => ({
+    //     url: `/projects/${id}`,
+    //     method: 'put',
+    //     data: project,
+    //   }),
+
+    //   invalidatesTags: ['Projects'],
+    // }),
+
+    // deleteProject: builder.mutation({
+    //   query: (id) => ({
+    //     url: `/projects/${id}`,
+    //     method: 'delete',
+    //   }),
+
+    //   invalidatesTags: ['Projects'],
+    // }),
+    // }),
   }),
 });
 
-export const { useGetActorsQuery } = actorApi;
+export const { useGetActorsQuery, useCreateActorMutation } = actorApi;

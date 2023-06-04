@@ -6,11 +6,13 @@ import { Actor } from 'features/actor/types/actor-types';
 interface ActorState {
   activeActor: Actor | null;
   selectedActors: number[];
+  isFormVisible: boolean;
 }
 
 const initialState: ActorState = {
-  activeActor: { name: '!!!' },
+  activeActor: null,
   selectedActors: [],
+  isFormVisible: false,
 };
 
 export const actorSlice = createSlice({
@@ -25,8 +27,13 @@ export const actorSlice = createSlice({
     setSelectedActorsAction: (state, action: PayloadAction<number[] | null>) => {
       state.selectedActors = action.payload;
     },
+
+    setIsFormVisible: (state, action: PayloadAction<boolean>) => {
+      state.isFormVisible = action.payload;
+    },
   },
 });
 
-export const { setActiveActorAction, setSelectedActorsAction } = actorSlice.actions;
+export const { setActiveActorAction, setSelectedActorsAction, setIsFormVisible } =
+  actorSlice.actions;
 export const actorReducer = actorSlice.reducer;
