@@ -1,12 +1,14 @@
-import '@mantine/core/styles.css';
 import { MantineProvider } from '@mantine/core';
 import { AppRouter } from 'app/app-router';
-import { theme } from './theme';
+import { PageFooter } from 'shared/components/page-footer/page-footer';
+import { PageHeader } from 'shared/components/page-header/page-header';
 
 export default function App() {
   return (
-    <MantineProvider theme={theme}>
+    <MantineProvider>
+      <PageHeader />
       <AppRouter />
+      <PageFooter />
     </MantineProvider>
   );
 }

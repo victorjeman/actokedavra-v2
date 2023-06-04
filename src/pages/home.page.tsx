@@ -1,8 +1,7 @@
+import { Button } from '@mantine/core';
 import { useAppDispatch, useAppSelector } from 'app/store-hook';
 import { useGetActorsQuery } from 'features/actor/api/actor-api';
 import { setActiveActorAction } from 'features/actor/store/actor-slice';
-
-import { ColorSchemeToggle } from 'shared/components/color-scheme-toggle/color-scheme-toggle';
 
 export function HomePage() {
   const dispatch = useAppDispatch();
@@ -16,12 +15,11 @@ export function HomePage() {
 
   return (
     <>
-      <button type="button" onClick={setActiveActor}>
+      <Button type="button" onClick={setActiveActor}>
         Modifica actorul activ
-      </button>
+      </Button>
       Actorul activ este: {activeActor?.name}
       {JSON.stringify(actors)}
-      <ColorSchemeToggle />
     </>
   );
 }
