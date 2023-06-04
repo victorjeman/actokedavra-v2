@@ -1,10 +1,11 @@
 import { useMemo, useState } from 'react';
-import { Button, Grid, Paper, SegmentedControl, Stack, Text } from '@mantine/core';
+import { Box, Grid, Paper, SegmentedControl, Stack, Text } from '@mantine/core';
 
 import { useGetActorsQuery } from 'features/actor/api/actor-api';
 import { ActorCreate } from 'features/actor/components/actor-create/actor-create';
 import { ActorThumbnail } from 'features/actor/components/actor-thumbnail/actor-thumbnail';
 import { Actor } from 'features/actor/types/actor-types';
+import { ActorResetDb } from 'features/actor/components/actor-reset-db/actor-reset-db';
 
 export const ActorList = () => {
   const { data: actors } = useGetActorsQuery();
@@ -28,18 +29,23 @@ export const ActorList = () => {
 
   return (
     <>
-      <Text size="lg" mb="sm">
-        Sort the actors
-      </Text>
-      <SegmentedControl
-        onChange={(value: 'ascending' | 'descending' | 'default') => setSortType(value)}
-        defaultValue="default"
-        data={[
-          { label: 'default', value: 'default' },
-          { label: 'ascending', value: 'ascending' },
-          { label: 'descending', value: 'descending' },
-        ]}
-      />
+      <Box>
+        <Text size="lg" mb="sm">
+          Sort the actors
+        </Text>
+
+        <SegmentedControl
+          onChange={(value: 'ascending' | 'descending' | 'default') => setSortType(value)}
+          defaultValue="default"
+          data={[
+            { label: 'default', value: 'default' },
+            { label: 'ascending', value: 'ascending' },
+            { label: 'descending', value: 'descending' },
+          ]}
+        />
+
+        <ActorResetDb />
+      </Box>
 
       <Grid gutter="2rem" my="xl">
         {sortedActors?.map((actor) => (

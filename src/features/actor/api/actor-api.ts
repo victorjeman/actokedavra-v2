@@ -29,6 +29,12 @@ export const actorApi = createApi({
       providesTags: ['actors'],
     }),
 
+    resetActors: builder.query<Actor[], void>({
+      query: () => ({ url: '/reset', method: 'get' }),
+
+      providesTags: ['actors'],
+    }),
+
     createActor: builder.mutation({
       query: (actor: Actor) => ({
         url: '/actors',
@@ -59,4 +65,9 @@ export const actorApi = createApi({
   }),
 });
 
-export const { useGetActorsQuery, useCreateActorMutation, useDeleteActorMutation } = actorApi;
+export const {
+  useGetActorsQuery,
+  useCreateActorMutation,
+  useDeleteActorMutation,
+  useLazyResetActorsQuery,
+} = actorApi;
