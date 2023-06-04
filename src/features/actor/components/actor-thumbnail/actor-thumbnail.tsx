@@ -1,4 +1,5 @@
 import { Avatar, Text, Button, Paper, Badge, Spoiler } from '@mantine/core';
+import { useDeleteActorMutation } from 'features/actor/api/actor-api';
 import { Actor } from 'features/actor/types/actor-types';
 
 interface Props {
@@ -6,6 +7,8 @@ interface Props {
 }
 
 export function ActorThumbnail({ actor }: Props) {
+  const [deleteActorMutation] = useDeleteActorMutation();
+
   return (
     <Paper
       radius="md"
@@ -32,6 +35,10 @@ export function ActorThumbnail({ actor }: Props) {
 
       <Button variant="default" fullWidth mt="md">
         Edit
+      </Button>
+
+      <Button color="red.4" fullWidth mt="md" onClick={() => deleteActorMutation(actor.id)}>
+        Delete
       </Button>
     </Paper>
   );

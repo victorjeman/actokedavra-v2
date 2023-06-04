@@ -48,16 +48,15 @@ export const actorApi = createApi({
     //   invalidatesTags: ['Projects'],
     // }),
 
-    // deleteProject: builder.mutation({
-    //   query: (id) => ({
-    //     url: `/projects/${id}`,
-    //     method: 'delete',
-    //   }),
+    deleteActor: builder.mutation({
+      query: (id) => ({
+        url: `/actors/${id}`,
+        method: 'delete',
+      }),
 
-    //   invalidatesTags: ['Projects'],
-    // }),
-    // }),
+      invalidatesTags: ['actors'],
+    }),
   }),
 });
 
-export const { useGetActorsQuery, useCreateActorMutation } = actorApi;
+export const { useGetActorsQuery, useCreateActorMutation, useDeleteActorMutation } = actorApi;
