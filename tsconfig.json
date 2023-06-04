@@ -18,7 +18,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "@test-utils": ["./test-utils"]
-    }
+    },
+    "baseUrl": "src"
   },
   "include": ["src", "test-utils"],
   "references": [{ "path": "./tsconfig.node.json" }]
