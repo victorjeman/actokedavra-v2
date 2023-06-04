@@ -5,7 +5,7 @@
   "scripts": {
     "dev:api": "json-server --watch db.json",
     "dev": "concurrently --kill-others \"yarn dev:api\" \"vite\"",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src",
