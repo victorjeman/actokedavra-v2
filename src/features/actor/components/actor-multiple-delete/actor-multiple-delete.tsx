@@ -1,8 +1,10 @@
 import { Button } from '@mantine/core';
 import { useAppSelector } from 'app/store-hook';
-import { useDeleteActorMutation } from 'features/actor/api/actor-api';
+import { useDeleteActorMutation, useGetActorsQuery } from 'features/actor/api/actor-api';
 
 export const ActorMultipleDelete = () => {
+  const { data: actors } = useGetActorsQuery();
+
   const { selectedActorIds } = useAppSelector((state) => state.actor);
   const [deleteActorMutation] = useDeleteActorMutation();
 
@@ -10,5 +12,7 @@ export const ActorMultipleDelete = () => {
     selectedActorIds.forEach((actorId) => deleteActorMutation(actorId));
   }
 
-  return <Button onClick={deleteSelectedActors}>Delete selected actors</Button>;
+  return actors?.length !== 0 && selectedActorIds.length !== 0 ? (
+    <Button onClick={deleteSelectedActors}>Delete selected actors</Button>
+  ) : null;
 };

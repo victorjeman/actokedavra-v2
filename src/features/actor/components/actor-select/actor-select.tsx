@@ -1,5 +1,5 @@
 import { Checkbox } from '@mantine/core';
-import { useAppDispatch, useAppSelector } from 'app/store-hook';
+import { useAppDispatch } from 'app/store-hook';
 import { setSelectedActorsAction } from 'features/actor/store/actor-slice';
 
 interface Props {
@@ -10,8 +10,11 @@ export const ActorSelect = ({ id }: Props) => {
   const dispatch = useAppDispatch();
 
   return (
-    <>
-      <Checkbox onChange={() => dispatch(setSelectedActorsAction(id))} />
-    </>
+    <Checkbox
+      size="xl"
+      radius="50%"
+      onChange={() => dispatch(setSelectedActorsAction(id))}
+      sx={{ position: 'absolute', top: '-0.9rem', right: '-0.9rem' }}
+    />
   );
 };
