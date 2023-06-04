@@ -1,5 +1,6 @@
 import { Avatar, Text, Button, Paper, Badge, Spoiler } from '@mantine/core';
 import { useDeleteActorMutation } from 'features/actor/api/actor-api';
+import { ActorSelect } from 'features/actor/components/actor-select/actor-select';
 import { Actor } from 'features/actor/types/actor-types';
 
 interface Props {
@@ -18,7 +19,10 @@ export function ActorThumbnail({ actor }: Props) {
         backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
       })}
     >
+      <ActorSelect id={actor.id} />
+
       <Avatar src={actor.image} size={120} radius={120} mx="auto" />
+
       <Text ta="center" fz="lg" weight={500} mt="md">
         {actor.name}
       </Text>
