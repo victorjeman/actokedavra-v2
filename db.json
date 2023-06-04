@@ -1,0 +1,52 @@
+{
+  "actors": [
+    {
+      "id": 1,
+      "name": "Tom Hanks",
+      "hobbies": ["Reading", "Collecting vintage typewriters", "Playing basketball"],
+      "description": "Tom Hanks is an American actor known for his versatile performances in films such as Forrest Gump, Saving Private Ryan, and Cast Away. He is widely regarded as one of the greatest actors of his generation.",
+      "image": "https://normanprof.com/wp-content/uploads/2016/06/thumbnail-default.jpg",
+      "bestMovieScore": 8.8
+    },
+    {
+      "id": 2,
+      "name": "Meryl Streep",
+      "hobbies": ["Cooking", "Playing tennis", "Gardening"],
+      "description": "Meryl Streep is an American actress recognized for her incredible range and numerous accolades. She has starred in acclaimed films like The Devil Wears Prada, Sophie's Choice, and Kramer vs. Kramer.",
+      "image": "https://normanprof.com/wp-content/uploads/2016/06/thumbnail-default.jpg",
+      "bestMovieScore": 8.1
+    },
+    {
+      "id": 3,
+      "name": "Leonardo DiCaprio",
+      "hobbies": ["Environmental activism", "Playing chess", "Pilates"],
+      "description": "Leonardo DiCaprio is an American actor and environmental activist. He has delivered powerful performances in movies like Titanic, The Wolf of Wall Street, and The Revenant, earning him critical acclaim and an Academy Award.",
+      "image": "https://normanprof.com/wp-content/uploads/2016/06/thumbnail-default.jpg",
+      "bestMovieScore": 8.2
+    },
+    {
+      "id": 4,
+      "name": "Jennifer Lawrence",
+      "hobbies": ["Painting", "Archery", "Cooking"],
+      "description": "Jennifer Lawrence is an American actress known for her charismatic and relatable roles. She gained international recognition for her portrayal of Katniss Everdeen in The Hunger Games series and has appeared in acclaimed films like Silver Linings Playbook and American Hustle.",
+      "image": "https://normanprof.com/wp-content/uploads/2016/06/thumbnail-default.jpg",
+      "bestMovieScore": 7.7
+    },
+    {
+      "id": 5,
+      "name": "Robert Downey Jr.",
+      "hobbies": ["Martial arts", "Playing music", "Collecting cars"],
+      "description": "Robert Downey Jr. is an American actor famous for his portrayal of Tony Stark/Iron Man in the Marvel Cinematic Universe. He has also starred in films like Sherlock Holmes, Chaplin, and Tropic Thunder, showcasing his versatility as an actor.",
+      "image": "https://normanprof.com/wp-content/uploads/2016/06/thumbnail-default.jpg",
+      "bestMovieScore": 8.5
+    },
+    {
+      "id": 6,
+      "name": "Emma Stone",
+      "hobbies": ["Writing", "Baking", "Listening to music"],
+      "description": "Emma Stone is an American actress known for her vibrant and charismatic performances. She has appeared in movies such as La La Land, The Help, and Easy A, winning an Academy Award for her role in La La Land.",
+      "image": "https://normanprof.com/wp-content/uploads/2016/06/thumbnail-default.jpg",
+      "bestMovieScore": 8.0
+    }
+  ]
+}
