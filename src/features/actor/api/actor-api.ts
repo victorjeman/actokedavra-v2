@@ -29,7 +29,7 @@ export const actorApi = createApi({
       providesTags: ['actors'],
     }),
 
-    getSingleActor: builder.query<ActorFormValues, number>({
+    getActor: builder.query<ActorFormValues, number>({
       query: (id) => ({ url: `actors/${id}`, method: 'get' }),
 
       // @ts-ignore
@@ -75,7 +75,7 @@ export const actorApi = createApi({
 
 export const {
   useGetActorsQuery,
-  useLazyGetSingleActorQuery,
+  useLazyGetActorQuery,
   useCreateActorMutation,
   useUpdateActorMutation,
   useDeleteActorMutation,

@@ -4,7 +4,7 @@ import { notifications } from '@mantine/notifications';
 
 import { useAppDispatch, useAppSelector } from 'app/store-hook';
 import { setActiveActorAction } from 'features/actor/store/actor-slice';
-import { useLazyGetSingleActorQuery, useUpdateActorMutation } from 'features/actor/api/actor-api';
+import { useLazyGetActorQuery, useUpdateActorMutation } from 'features/actor/api/actor-api';
 
 import { ActorUpdateForm } from 'features/actor/components/actor-update-form/actor-update-form';
 
@@ -14,7 +14,7 @@ export const ActorUpdate = () => {
   const dispatch = useAppDispatch();
   const { activeActor } = useAppSelector((state) => state.actor);
 
-  const [lazyGetSingleActorQuery, getActorResponse] = useLazyGetSingleActorQuery();
+  const [lazyGetActorQuery, getActorResponse] = useLazyGetActorQuery();
   const [updateActorMutation, updateActorResponse] = useUpdateActorMutation();
 
   function updateActor(data: any) {
@@ -22,7 +22,7 @@ export const ActorUpdate = () => {
   }
 
   useEffect(() => {
-    if (activeActor) lazyGetSingleActorQuery(activeActor.id);
+    if (activeActor) lazyGetActorQuery(activeActor.id);
   }, [activeActor]);
 
   useEffect(() => {
