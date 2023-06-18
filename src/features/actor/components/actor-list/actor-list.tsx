@@ -2,10 +2,9 @@ import { useMemo, useState } from 'react';
 import { Box, Grid, Paper, SegmentedControl, Stack, Text } from '@mantine/core';
 
 import { useGetActorsQuery } from 'features/actor/api/actor-api';
+import { Actor } from 'features/actor/types/actor-types';
 import { ActorCreate } from 'features/actor/components/actor-create/actor-create';
 import { ActorThumbnail } from 'features/actor/components/actor-thumbnail/actor-thumbnail';
-import { Actor } from 'features/actor/types/actor-types';
-import { ActorResetDb } from 'features/actor/components/actor-reset-db/actor-reset-db';
 
 export const ActorList = () => {
   const { data: actors } = useGetActorsQuery();
@@ -31,7 +30,7 @@ export const ActorList = () => {
     <>
       <Box>
         <Text size="lg" mb="sm">
-          Sort the actors
+          Sort actors
         </Text>
 
         <SegmentedControl
@@ -43,8 +42,6 @@ export const ActorList = () => {
             { label: 'descending', value: 'descending' },
           ]}
         />
-
-        <ActorResetDb />
       </Box>
 
       <Grid gutter="2rem" my="xl">

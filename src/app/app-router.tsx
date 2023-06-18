@@ -1,13 +1,13 @@
 import { Route, Routes } from 'react-router-dom';
 
-import { HomePage } from 'pages/home.page';
-import { AboutPage } from 'pages/about.page';
+import { PageActors } from 'pages/page-actors';
+import { PageAbout } from 'pages/page-about';
 
 export function AppRouter() {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/about" element={<AboutPage />} />
+      <Route path="/" element={<PageActors />} />
+      <Route path="/about" element={<PageAbout />} />
     </Routes>
   );
 }
