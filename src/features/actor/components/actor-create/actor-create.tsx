@@ -5,7 +5,7 @@ import { notifications } from '@mantine/notifications';
 import { useAppDispatch, useAppSelector } from 'app/store-hook';
 import { setIsFormVisible } from 'features/actor/store/actor-slice';
 import { useCreateActorMutation } from 'features/actor/api/actor-api';
-import { ActorCreateForm } from 'features/actor/components/actor-create-form/actor-create-form';
+import { ActorForm } from 'features/actor/components/actor-form/actor-form';
 
 export const ActorCreate = () => {
   const theme = useMantineTheme();
@@ -47,7 +47,7 @@ export const ActorCreate = () => {
         title="Add new actor"
         centered
       >
-        <ActorCreateForm onFormSubmit={createActor} />
+        <ActorForm onFormSubmit={createActor} submitText="Create" />
       </Modal>
 
       <Box ta="center">

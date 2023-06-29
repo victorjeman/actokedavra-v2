@@ -18,7 +18,6 @@ server.get('/reset', (req, res) => {
   fs.copyFile(src, dest, (error) => {
     if (error) {
       console.error(error);
-      console.log('here i am');
       return;
     }
 

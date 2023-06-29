@@ -5,7 +5,7 @@ import { notifications } from '@mantine/notifications';
 import { useAppDispatch, useAppSelector } from 'app/store-hook';
 import { setActiveActorAction } from 'features/actor/store/actor-slice';
 import { useLazyGetActorQuery, useUpdateActorMutation } from 'features/actor/api/actor-api';
-import { ActorUpdateForm } from 'features/actor/components/actor-update-form/actor-update-form';
+import { ActorForm } from 'features/actor/components/actor-form/actor-form';
 
 export const ActorUpdate = () => {
   const theme = useMantineTheme();
@@ -53,7 +53,7 @@ export const ActorUpdate = () => {
     >
       <LoadingOverlay visible={getActorResponse.isLoading} overlayBlur={2} />
 
-      <ActorUpdateForm onFormSubmit={updateActor} formValues={activeActor} />
+      <ActorForm onFormSubmit={updateActor} formValues={activeActor} submitText="Update" />
     </Modal>
   );
 };

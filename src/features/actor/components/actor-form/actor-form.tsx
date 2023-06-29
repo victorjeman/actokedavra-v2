@@ -1,22 +1,23 @@
 import { Button, Container, TextInput } from '@mantine/core';
 import { Controller, useForm } from 'react-hook-form';
 
-import { ACTOR_FIELDS } from 'features/actor/constants/actor-constants';
+import { ACTOR_FIELDS, ACTOR_DEFAULT_VALUES } from 'features/actor/constants/actor-constants';
 import { ActorFormValues } from 'features/actor/types/actor-types';
 
 interface Props {
   formValues?: ActorFormValues;
+  submitText: string;
   onFormSubmit: (data: any) => void;
 }
 
-export const ActorUpdateForm = ({ formValues, onFormSubmit }: Props) => {
+export const ActorForm = ({ formValues, onFormSubmit, submitText }: Props) => {
   const {
     handleSubmit,
     control,
     formState: { errors },
   } = useForm({
     defaultValues: {},
-    values: formValues,
+    values: formValues || ACTOR_DEFAULT_VALUES,
   });
 
   return (
@@ -41,7 +42,7 @@ export const ActorUpdateForm = ({ formValues, onFormSubmit }: Props) => {
           />
         ))}
 
-        <Button type="submit">Update</Button>
+        <Button type="submit">{submitText}</Button>
       </form>
     </Container>
   );
