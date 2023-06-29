@@ -13,6 +13,8 @@ export const ActorMultipleDelete = () => {
   }
 
   return actors?.length !== 0 && selectedActorIds.length !== 0 ? (
-    <Button onClick={deleteSelectedActors}>Delete selected actors</Button>
+    <Button onClick={deleteSelectedActors} color="red.4">
+      Delete selected actors
+    </Button>
   ) : null;
 };

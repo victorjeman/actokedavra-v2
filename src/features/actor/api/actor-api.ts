@@ -2,7 +2,7 @@ import { nanoid } from '@reduxjs/toolkit';
 import { EndpointBuilder } from '@reduxjs/toolkit/dist/query/endpointDefinitions';
 import { BaseQueryFn, createApi } from '@reduxjs/toolkit/query/react';
 
-import { Actor } from 'features/actor/types/actor-types';
+import { Actor, ActorFormValues } from 'features/actor/types/actor-types';
 import { fetchBaseQueryApi } from 'shared/api/fetch-base-query-api';
 
 export const actorApi = createApi({
@@ -11,7 +11,7 @@ export const actorApi = createApi({
   baseQuery: fetchBaseQueryApi(),
 
   endpoints: (builder: EndpointBuilder<BaseQueryFn, string, string>) => ({
-    getActors: builder.query<Actor[], void>({
+    getActors: builder.query<ActorFormValues[], void>({
       query: () => ({ url: 'actors', method: 'get' }),
 
       // @ts-ignore
@@ -29,8 +29,11 @@ export const actorApi = createApi({
       providesTags: ['actors'],
     }),
 
-    resetActors: builder.query<Actor[], void>({
-      query: () => ({ url: '/reset', method: 'get' }),
+    getActor: builder.query<ActorFormValues, number>({
+      query: (id) => ({ url: `actors/${id}`, method: 'get' }),
+
+      // @ts-ignore
+      transformResponse: (data: Actor) => ({ ...data, hobbies: data.hobbies.join(', ') }),
 
       providesTags: ['actors'],
     }),
@@ -44,15 +47,14 @@ export const actorApi = createApi({
       invalidatesTags: ['actors'],
     }),
 
-    // updateProject: builder.mutation({
-    //   query: ({ id, project }) => ({
-    //     url: `/projects/${id}`,
-    //     method: 'put',
-    //     data: project,
-    //   }),
-
-    //   invalidatesTags: ['Projects'],
-    // }),
+    updateActor: builder.mutation({
+      query: (actor: Actor) => ({
+        url: `/actors/${actor.id}`,
+        method: 'patch',
+        data: actor,
+      }),
+      invalidatesTags: ['actors'],
+    }),
 
     deleteActor: builder.mutation({
       query: (id) => ({
@@ -62,12 +64,20 @@ export const actorApi = createApi({
 
       invalidatesTags: ['actors'],
     }),
+
+    resetActors: builder.query<Actor[], void>({
+      query: () => ({ url: '/reset', method: 'get' }),
+
+      providesTags: ['actors'],
+    }),
   }),
 });
 
 export const {
   useGetActorsQuery,
+  useLazyGetActorQuery,
   useCreateActorMutation,
+  useUpdateActorMutation,
   useDeleteActorMutation,
   useLazyResetActorsQuery,
 } = actorApi;

@@ -1,7 +1,7 @@
 import type { BaseQueryFn } from '@reduxjs/toolkit/query';
 import axios, { type AxiosRequestConfig } from 'axios';
 
-import { BASE_URL } from 'shared/constants/shared-constants';
+import { BASE_API_URL } from 'shared/constants/shared-constants';
 
 export const fetchBaseQueryApi =
   (): BaseQueryFn<{
@@ -13,7 +13,7 @@ export const fetchBaseQueryApi =
   async (param) => {
     const result = await axios({
       ...param,
-      baseURL: BASE_URL,
+      baseURL: BASE_API_URL,
     });
 
     return { data: result.data };
