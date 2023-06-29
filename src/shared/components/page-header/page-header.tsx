@@ -20,7 +20,7 @@ export function PageHeader() {
       <Container className={classes.header} size="lg">
         <Group position="apart" w="100%">
           <Text fw="600" size="xl">
-            Actokedavra
+            Actokedavra v2
           </Text>
 
           <Group>
