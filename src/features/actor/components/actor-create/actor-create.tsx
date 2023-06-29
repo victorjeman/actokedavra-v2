@@ -26,7 +26,7 @@ export const ActorCreate = () => {
       notifications.show({
         title: 'Actor create',
         message: `${createActorResponse.data?.name} created successfully!`,
-        autoClose: 4000,
+        autoClose: 3000,
       });
     }
   }, [createActorResponse]);

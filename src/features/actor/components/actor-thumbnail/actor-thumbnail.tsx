@@ -67,7 +67,7 @@ export function ActorThumbnail({ actor }: Props) {
         color: 'red',
         title: 'Actor delete',
         message: `${actor.name} deleted successfully!`,
-        autoClose: 4000,
+        autoClose: 3000,
       });
     }
   }, [response]);

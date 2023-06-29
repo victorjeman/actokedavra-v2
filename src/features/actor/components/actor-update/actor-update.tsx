@@ -33,7 +33,7 @@ export const ActorUpdate = () => {
       notifications.show({
         title: 'Actor update',
         message: `${updateActorResponse.data?.name} updated successfully!`,
-        autoClose: 4000,
+        autoClose: 3000,
       });
     }
   }, [updateActorResponse]);
