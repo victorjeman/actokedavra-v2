@@ -5,7 +5,7 @@ import { ACTOR_FIELDS } from 'features/actor/constants/actor-constants';
 import { ActorFormValues } from 'features/actor/types/actor-types';
 
 interface Props {
-  formValues: ActorFormValues;
+  formValues?: ActorFormValues;
   onFormSubmit: (data: any) => void;
 }
 
@@ -15,7 +15,8 @@ export const ActorUpdateForm = ({ formValues, onFormSubmit }: Props) => {
     control,
     formState: { errors },
   } = useForm({
-    defaultValues: { ...formValues },
+    defaultValues: {},
+    values: formValues,
   });
 
   return (

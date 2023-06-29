@@ -107,7 +107,7 @@ export function ActorThumbnail({ actor }: Props) {
         variant="default"
         fullWidth
         mt="md"
-        onClick={() => dispatch(setActiveActorAction(actor))}
+        onClick={() => dispatch(setActiveActorAction(actor.id))}
       >
         Edit
       </Button>

@@ -1,16 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-import { Actor } from 'features/actor/types/actor-types';
-
 interface ActorState {
-  activeActor: Actor | null;
+  activeActorId: number | null;
   selectedActorIds: number[];
   isFormVisible: boolean;
 }
 
 const initialState: ActorState = {
-  activeActor: null,
+  activeActorId: null,
   selectedActorIds: [],
   isFormVisible: false,
 };
@@ -20,8 +18,8 @@ export const actorSlice = createSlice({
   initialState,
 
   reducers: {
-    setActiveActorAction: (state, action: PayloadAction<Actor | null>) => {
-      state.activeActor = action.payload;
+    setActiveActorAction: (state, action: PayloadAction<number | null>) => {
+      state.activeActorId = action.payload;
     },
 
     setSelectedActorsAction: (state, action: PayloadAction<number>) => {

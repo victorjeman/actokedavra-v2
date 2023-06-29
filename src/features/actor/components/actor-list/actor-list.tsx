@@ -51,6 +51,7 @@ export const ActorList = () => {
           </Grid.Col>
         ))}
       </Grid>
+
       {actors?.length === 0 && (
         <Paper shadow="md" withBorder p="xl" maw={600} mx="auto">
           <Stack align="center">
@@ -62,6 +63,7 @@ export const ActorList = () => {
           </Stack>
         </Paper>
       )}
+
       {actors?.length !== 0 && <ActorCreate />}
     </>
   );
