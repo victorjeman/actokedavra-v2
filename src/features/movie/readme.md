@@ -1,3 +1,16 @@
-Do more or less the same functionality as we have for actors
-Make the connections between actors and movies.
-An actor can play in one or more movies.
+# General
+
+Install pnpm if you don't have it
+```
+npm install -g pnpm
+```
+
+Install local dependencies
+```
+pnpm install
+```
+
+Run the project
+```
+pnpm run dev
+```
